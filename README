@@ -1,0 +1,8 @@
+esp-elf-rom
+-----------
+
+This tiny project allows converting ESP8266 ROM blob to ELF file with symbols.
+Makefile provides the following commands:
+* eagle.rom.addr.v6.ld: consolidate symbol definitions from multiple
+  eagle.rom.addr.v6.ld files in subdirectories.
+* all: build rom.elf from iram0.bin and eagle.rom.addr.v6.ld
