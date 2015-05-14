@@ -1,6 +1,6 @@
 MEMORY
 {
-  irom0 : org = 0x40000000, len = 0x10000
+  bootrom0 : org = 0x40000000, len = 0x10000
 }
 
 SECTIONS
@@ -8,7 +8,7 @@ SECTIONS
 	.rom : ALIGN(4)
 	{
 		*(.text)
-	} > irom0
+	} > bootrom0
 
 	/DISCARD/ : { *(.data .bss) }
 } 
