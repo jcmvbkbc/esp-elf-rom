@@ -25,7 +25,7 @@ eagle.rom.addr.v6.ld:
 	$(LD) -M -T bootrom.ld -r $^ -o $@
 
 rom-functions.s: eagle.rom.addr.v6.ld
-	sed -n 's/PROVIDE[[:space:]]*([[:space:]]*\([^[:space:]=]\+\)[^0]\+\(0x4.......\).*/\1 = \2 - 0x40000000 + _stext\n.global \1\n/p' < $^ > $@
+	sed -n 's/PROVIDE[[:space:]]*([[:space:]]*\([^[:space:]=]\+\)[^0]\+\(0x4.......\).*/\1 = \2 - 0x40000000 + _stext\n.global \1\n.type \1, @function/p' < $^ > $@
 
 %.o: %.s rom-functions.s
 	$(AS) $< -o $@
