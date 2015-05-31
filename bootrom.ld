@@ -5,7 +5,7 @@ MEMORY
 
 SECTIONS
 {
-	.rom : ALIGN(4)
+	.text : ALIGN(4)
 	{
 		*(.text)
 	} > bootrom0
